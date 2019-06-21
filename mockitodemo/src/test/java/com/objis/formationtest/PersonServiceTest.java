@@ -51,7 +51,7 @@ public class PersonServiceTest
         when( personDAO.fetchPerson( 1 ) ).thenReturn( null );
         boolean updated = personService.update( 1, "David" );
         assertFalse( updated );
-        verify( personDAO ).fetchPerson( 1 );
+        verify( personDAO ).fetchPerson( 2 );
         verifyZeroInteractions( personDAO );
         verifyNoMoreInteractions( personDAO );
     }
